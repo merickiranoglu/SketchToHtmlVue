@@ -1,7 +1,6 @@
 <template>
   <div id="divParserPage">
     <div id="divUpload">
-      <h1>This is the Html Parser</h1>
       <p>Upload JSON file to be parsed into HTML.</p>
       <input type="file" id="inputJsonFile" v-on:change="JsonLoaded" />
     </div>
@@ -56,7 +55,6 @@ export default {
       console.log("Generating label...");
       var buttonElement = document.createElement("label");
       buttonElement.setAttribute("type", "label");
-      // element.setAttribute('value', '')
       buttonElement.setAttribute("id", key);
 
       buttonElement.style.position = "absolute";
@@ -78,19 +76,18 @@ export default {
       console.log("Generating textbox...");
       var textboxElement = document.createElement("input");
       textboxElement.setAttribute("type", "text");
-      // element.setAttribute('value', '')
       textboxElement.setAttribute("id", key);
 
       textboxElement.style.position = "absolute";
       textboxElement.style.left = val.boundingBoxMinX + "px";
       textboxElement.style.bottom = val.boundingBoxMinY + "px";
+      textboxElement.style.border = "1px solid black";
 
       var width = val.boundingBoxMaxX - val.boundingBoxMinX;
       var height = val.boundingBoxMaxY - val.boundingBoxMinY;
 
       textboxElement.style.width = width + "px";
       textboxElement.style.height = height + "px";
-      textboxElement.style.border = "3px solid black";
 
       this.$el.querySelector("#divParsedForm").appendChild(textboxElement);
       console.log("Textbox generated!");
@@ -99,7 +96,6 @@ export default {
       console.log("Generating button...");
       var buttonElement = document.createElement("button");
       buttonElement.setAttribute("type", "button");
-      // element.setAttribute('value', '')
       buttonElement.setAttribute("id", key);
 
       buttonElement.style.position = "absolute";
@@ -111,7 +107,7 @@ export default {
 
       buttonElement.style.width = width + "px";
       buttonElement.style.height = height + "px";
-      buttonElement.style.border = "3px solid black";
+      buttonElement.style.border = "1px solid black";
 
       var buttonText = document.createTextNode(val.text);
       buttonElement.appendChild(buttonText);
@@ -124,14 +120,12 @@ export default {
 
 <style scoped>
 #divUpload {
-  background-color: rgb(200, 205, 207);
   flex-grow: 1;
-  border: 2px black solid;
   padding: 10px;
 }
 
 #divParsedForm {
-  background-color: rgb(200, 195, 207);
+  background-color: rgb(234, 234, 231);
   flex-grow: 1;
   position: relative;
 }
