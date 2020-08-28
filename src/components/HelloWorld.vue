@@ -12,68 +12,65 @@
 
       <v-col class="mb-4">
         <h1 class="display-2 font-weight-bold mb-3">
-          Welcome to Vuetify
+          Welcome to Sketch to HTML
         </h1>
 
         <p class="subheading font-weight-regular">
-          For help and collaboration with other Vuetify developers,
-          <br />please join our online
-          <a href="https://community.vuetifyjs.com" target="_blank"
-            >Discord Community</a
-          >
+          Sketch your form and upload.
+          
+          <br />We will generate your HTML.
         </p>
+
+        <a
+            href="/parser"
+            class="subheading mx-3"
+          > Go ahead and try.
+        </a>
       </v-col>
 
       <v-col class="mb-5" cols="12">
+       
         <h2 class="headline font-weight-bold mb-3">
-          What's next?
+          Example Sketch :
         </h2>
 
         <v-row justify="center">
-          <a
-            v-for="(next, i) in whatsNext"
-            :key="i"
-            :href="next.href"
-            class="subheading mx-3"
-            target="_blank"
-          >
-            {{ next.text }}
-          </a>
+         <v-img
+          alt="Vuetify Logo"
+          class="shrink mt-3"
+          contain
+          src="./../assets/sampleSketch.jpg"
+          transition="scale-transition"
+          width="400"
+        />
         </v-row>
       </v-col>
 
       <v-col class="mb-5" cols="12">
         <h2 class="headline font-weight-bold mb-3">
-          Important Links
+          Supported Elements
         </h2>
 
         <v-row justify="center">
           <a
-            v-for="(link, i) in importantLinks"
-            :key="i"
-            :href="link.href"
+            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/label"
             class="subheading mx-3"
             target="_blank"
-          >
-            {{ link.text }}
+          > Label
           </a>
-        </v-row>
-      </v-col>
 
-      <v-col class="mb-5" cols="12">
-        <h2 class="headline font-weight-bold mb-3">
-          Ecosystem
-        </h2>
-
-        <v-row justify="center">
-          <a
-            v-for="(eco, i) in ecosystem"
-            :key="i"
-            :href="eco.href"
+           <a
+            href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input"
             class="subheading mx-3"
             target="_blank"
-          >
-            {{ eco.text }}
+          > Input (Text)
+          </a>
+
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input"
+            class="subheading mx-3"
+            target="_blank"
+          > Input (Button)
           </a>
         </v-row>
       </v-col>

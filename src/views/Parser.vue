@@ -5,12 +5,28 @@
       <input type="file" id="inputJsonFile" v-on:change="JsonLoaded" />
     </div>
     <div id="divParsedForm"></div>
+    <div id="divParsedHtmlOutput">
+      <v-container fluid>
+        <v-textarea
+        name="input-7-1"
+        filled
+        label="HTML Code:"
+        auto-grow
+        v-model="textAreaValue"
+        value="Your HTML code will be given here..."
+      ></v-textarea>
+    </v-container>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Parser",
+  data: function () {
+    return {
+      textAreaValue: ""
+    }
+  },
   methods: {
     JsonLoaded: function(event) {
       console.log("json file is uploaded...");
@@ -114,6 +130,10 @@ export default {
       this.$el.querySelector("#divParsedForm").appendChild(buttonElement);
       console.log("Button generated!");
     }
+  },
+  mounted: function () {
+    console.log(this);
+    this.textAreaValue = "HTML bıdı bıdı";
   }
 };
 </script>
